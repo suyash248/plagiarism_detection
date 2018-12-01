@@ -8,10 +8,8 @@ __pycache__/
 local.py
 
 env.sh
-test.py
 # C extensions
 *.so
-db_backup.sql
 nohup.out
 # Distribution / packaging
 .Python
@@ -58,31 +56,15 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-
 # Flask stuff:
 instance/
 .webassets-cache
 
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
 # PyBuilder
 target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # pyenv
 .python-version
-
-# celery beat schedule file
-celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
@@ -91,19 +73,6 @@ celerybeat-schedule
 .env
 .venv
 venv
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
 
 .idea/
 .DS_Store
