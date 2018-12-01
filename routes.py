@@ -11,6 +11,6 @@ def register_urls(api):
     Maps all the endpoints with controllers.
     """
 
-    api.add_resource(plag_detection.PlagiarismDetector, add_prefix('/detect-plagiarism'))
+    api.add_resource(plag_detection.PlagiarismDetection, add_prefix('/detect-plagiarism'))
 
 

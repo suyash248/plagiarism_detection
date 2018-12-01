@@ -10,7 +10,7 @@ class BaseController(Resource):
     """
 
     # Child controllers must override this property with default service for a specific module.
-    __service_class__ = inject('services.base.BaseService')
+    __service_class__ = inject('service.base.BaseService')
 
     @property
     def service(self):
