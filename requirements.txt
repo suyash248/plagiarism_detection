@@ -1,0 +1,16 @@
+aniso8601==4.0.1
+Click==7.0
+Flask==1.0.2
+Flask-RESTful==0.3.6
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.1.0
+nltk==3.4
+numpy==1.15.4
+pytz==2018.7
+scikit-learn==0.20.1
+scipy==1.1.0
+singledispatch==3.4.0.3
+six==1.11.0
+sklearn==0.0
+Werkzeug==0.14.1
