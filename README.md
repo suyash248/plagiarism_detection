@@ -68,10 +68,10 @@ There are following three APIs -
 
 ```javascript
 {
-    "success": true,
-    "message": "Document added successfully!",
-    "data": null,
-    "errors": []
+     "success": true,
+     "message": "Document added successfully!",
+     "data": null,
+     "errors": []
 }
 ```
 
@@ -83,7 +83,7 @@ There are following three APIs -
 
 ```javascript
 {
-	  "text": "Sachin Tendulkar is a great cricketer.",
+    "text": "Sachin Tendulkar is a great cricketer.",
 }
 ```
 
