@@ -1,0 +1,127 @@
+{
+	"info": {
+		"name": "Plag",
+		"_postman_id": "86bfb603-6947-a37c-5bc7-de811405b62f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add doc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"Sachin Ramesh Tendulkar is a former Indian international cricketer and a former captain of the Indian national team, regarded as one of the greatest batsmen of all time. He is the highest run scorer of all time in International cricket.\",\n\t\"title\": \"Sachin Tendulkar\",\n\t\"author\": \"James neshley\",\n\t\"description\": \"About the legacy of the great Sachin Tendulkar\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/v1/plagiarism/documents",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"plagiarism",
+						"documents"
+					]
+				},
+				"description": "Adding a doc"
+			},
+			"response": []
+		},
+		{
+			"name": "Detect plag",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"white cockteil\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/v1/plagiarism/detect",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"plagiarism",
+						"detect"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get all docs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"cockteil bird\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/api/v1/plagiarism/documents?page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"plagiarism",
+						"documents"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"equals": true
+						},
+						{
+							"key": "per_page",
+							"value": "10",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
