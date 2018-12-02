@@ -1,13 +1,14 @@
 __author__ = "Suyash Soni"
 __email__ = "suyash.soni248@gmail.com"
 
-import sys, time
+import time
 from flask_restful import fields, marshal
 from flask import request
 from util.error_handlers.exceptions import BaseException, Error
 from util.constants.error_codes import ErrorCode
 from flask import Response as FlaskResponse
-
+from pymysql import MySQLError
+from sqlalchemy.exc import SQLAlchemyError
 
 class Response(object):
     def __init__(self, success=True, data=None, errors=(), message="", status_code=200, headers=None, mimetype=None):
@@ -70,12 +71,20 @@ def intercept(profiler=True):
                     be.errors = [be.errors]
                 response_obj = Response(success=False, status_code=be.status_code, message=be.message,
                                         errors=be.errors)
+            except (MySQLError, SQLAlchemyError) as dbe:
+                # Default exceptions thrown by SQLAlchemy are handled here.
+                import traceback
+                print(traceback.format_exc())
+
+                message = 'Database error occurred.'
+                response_obj = Response(success=False, status_code=500, message=message,
+                                        errors=[Error(ErrorCode.DB_ERROR, 'database_error', message=str(dbe)).to_dict])
             except Exception as e:
                 # Any uncaught exception will be handled here.
                 import traceback
                 print (traceback.format_exc())
-                print (sys.exc_info())
-                response_obj = Response(success=False, status_code=500, errors=[Error(ErrorCode.NON_STANDARD_ERROR, message=str(e)).to_dict])
+                response_obj = Response(success=False, status_code=500,
+                                        errors=[Error(ErrorCode.NON_STANDARD_ERROR, message=str(e)).to_dict])
 
             return response_builder(response_obj)
         return wrapper

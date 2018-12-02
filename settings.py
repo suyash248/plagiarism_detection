@@ -10,7 +10,17 @@ app = Flask(__name__)
 
 # Ideally, there will be one config class per environment(dev, qa, uat, prod)
 class __Config__(object):
-    pass
+    MYSQL_DB_CONFIG = {
+        'URI_CONFIG': {
+            'database': os.environ['MYSQL_DB_NAME'],
+            'host': os.environ['MYSQL_DB_HOST'],
+            'username': os.environ['MYSQL_DB_USERNAME'],
+            'password': os.environ['MYSQL_DB_PASSWORD'],
+            'port': os.environ['MYSQL_DB_PORT']
+        },
+        'MYSQL_CONNECTION_POOL_SIZE': os.environ.get('MYSQL_CONNECTION_POOL_SIZE', 5)
+    }
+    FIELDS_SEPARATOR = '|'
 
 app.config.from_object(__Config__)
 config = app.config

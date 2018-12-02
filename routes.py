@@ -4,13 +4,11 @@ __email__ = "suyash.soni248@gmail.com"
 from controller import plag_detection
 
 def add_prefix(uri):
-    return "{}{}".format('/api/v1', uri)
+    return "{}{}".format('/api/v1/plagiarism', uri)
 
 def register_urls(api):
     """
     Maps all the endpoints with controllers.
     """
 
-    api.add_resource(plag_detection.PlagiarismDetection, add_prefix('/detect-plagiarism'))
-
-
+    api.add_resource(plag_detection.PlagiarismDetection, add_prefix('/detect'))

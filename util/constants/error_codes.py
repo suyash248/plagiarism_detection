@@ -15,6 +15,7 @@ class ErrorCode(object):
     INVALID_DATA = 'INVALID_DATA'
     EXTERNAL_APP_ERROR = 'EXTERNAL_APP_ERROR'
     INVALID_SOURCE = 'INVALID_SOURCE'
+    DB_ERROR = 'DB_ERROR'
 
 class HttpErrorCode(ErrorCode):
     BAD_REQUEST = 'BAD_REQUEST'
