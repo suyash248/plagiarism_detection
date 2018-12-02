@@ -9,6 +9,7 @@ from util.constants.error_codes import ErrorCode
 from flask import Response as FlaskResponse
 from pymysql import MySQLError
 from sqlalchemy.exc import SQLAlchemyError
+from util.logger import Logger
 
 class Response(object):
     def __init__(self, success=True, data=None, errors=(), message="", status_code=200, headers=None, mimetype=None):
@@ -61,7 +62,7 @@ def intercept(profiler=True):
                 end = time.time()
                 if profiler:
                     api_name = "{}: {}".format(func.__name__.upper(), request.url_rule)
-                    print("{} took {} sec(s)".format(api_name, end-start))
+                    Logger.info("{} took {} sec(s)".format(api_name, end-start))
 
             except BaseException as be:
                 # Custom exceptions are handled here.

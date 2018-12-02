@@ -12,12 +12,13 @@ from typing import List, Dict
 class PlagiarismDetector(BaseService):
 
     plag_dao: PlagiarismDAO = inject(PlagiarismDAO)
+    vectorizer = None
 
     @staticmethod
-    def tokenize(doc):
+    def tokenize_and_stem(doc):
         punctuation_remover = dict((ord(char), None) for char in string.punctuation)
         tokens = nltk.word_tokenize(doc.lower().translate(punctuation_remover))
-        return tokens
+        return PlagiarismDetector.stem_tokens(tokens)
 
     @staticmethod
     def stem_tokens(tokens):
@@ -26,7 +27,7 @@ class PlagiarismDetector(BaseService):
         return stemmed_tokens
 
     def cosine_similarity(self, source_doc, input_doc):
-        vectorizer = TfidfVectorizer(tokenizer=PlagiarismDetector.stem_tokens, stop_words='english')
+        vectorizer = self.vectorizer or TfidfVectorizer(tokenizer=PlagiarismDetector.tokenize_and_stem, stop_words='english')
         tfidf = vectorizer.fit_transform([source_doc, input_doc])
         return ((tfidf * tfidf.T).A)[0, 1]
 

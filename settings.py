@@ -21,6 +21,9 @@ class __Config__(object):
         'MYSQL_CONNECTION_POOL_SIZE': os.environ.get('MYSQL_CONNECTION_POOL_SIZE', 5)
     }
     FIELDS_SEPARATOR = '|'
+    LOGGING = {
+        'LEVEL': 'INFO'
+    }
 
 app.config.from_object(__Config__)
 config = app.config
