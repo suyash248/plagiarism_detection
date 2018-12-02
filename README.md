@@ -1,14 +1,14 @@
 # Plagiarism Detection
-Plagiarism detection using TF-IDF and cosine similarity.
 
- - Input text will be matched against all the documents present in the DB(`document` table).
+1. Plagiarism detection using TF-IDF and cosine similarity.
+2. Input text will be matched against all the documents present in the DB(`document` table) to get the maximum similarity score.
 
 ### Requirements
 Python 3.x, pip3, MySQL
 
 ### How to run?
-1. Move to ```<project-dir>```, create virual environment and then activate it as
 
+1. Move to ```<project-dir>```, create virual environment and then activate it as
 
 ```sh
 $ cd <project-dir>
