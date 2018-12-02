@@ -34,6 +34,7 @@ from routes import register_urls
 register_urls(api)
 
 @app.route("/")
+@app.route("/api/v1/plagiarism")
 def index():
     return json.dumps({"message": "Welcome to Plagiarism Detector"})
 

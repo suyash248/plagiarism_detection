@@ -11,7 +11,7 @@ class Document(BaseModel):
     content = db.Column('content', db.Text(), nullable=False)
     title = db.Column('title', db.String(200), nullable=False)
     description = db.Column('description', db.Text(), nullable=True)
-    author = db.Column('author', db.String(200), nullable=False)
+    author = db.Column('author', db.String(200), nullable=True)
 
     # Table metadata can be specified as follows -
     __table_args__ = (

@@ -24,7 +24,8 @@ class BaseService(object, metaclass=SingletonMeta):
         * other_service_obj = self.inject("arg1", kw1="kw1val", service_class='my_package.my_services.OtherService')
     """
     def __init__(self, *args, **kwargs):
-        pass
+        from mysql_connector import db
+        self.db = db
 
     @classmethod
     def instance(cls, *args, **kwargs):
