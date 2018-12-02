@@ -57,10 +57,10 @@ There are following three APIs -
 
 ```javascript
 {
-	"content": "Sachin Ramesh Tendulkar is a former Indian international cricketer and a former captain of the Indian national team, regarded as one of the greatest batsmen of all time. He is the highest run scorer of all time in International cricket.",
-	"title": "Sachin Tendulkar",
-	"author": "James neshley",
-	"description": "About the legacy of the great Sachin Tendulkar"
+      "content": "Sachin Ramesh Tendulkar is a former Indian international cricketer and a former captain of the Indian national team, regarded as one of the greatest batsmen of all time. He is the highest run scorer of all time in International cricket.",
+      "title": "Sachin Tendulkar",
+      "author": "James neshley",
+      "description": "About the legacy of the great Sachin Tendulkar"
 }
 ```
 
@@ -141,3 +141,7 @@ There are following three APIs -
       }
 }
 ```
+
+# TODO - 
+1. Use a wsgi server like Gunicorn.
+2. Centralized logging.
