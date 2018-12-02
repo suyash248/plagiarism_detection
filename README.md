@@ -142,6 +142,10 @@ There are following three APIs -
 }
 ```
 
+### Links -
+ - [Postmant dump](https://github.com/suyash248/plagiarism_detection/blob/master/output/Plag.postman_collection.json)
+ - [Screenshots](https://github.com/suyash248/plagiarism_detection/blob/master/output)
+
 ### TODO - 
 1. Use a wsgi server like Gunicorn.
 2. Centralized logging.
