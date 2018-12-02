@@ -8,6 +8,12 @@ from math import ceil
 class PlagiarismDAO(BaseService):
 
     def yield_docs(self, page=1, per_page=10):
+        """
+        Yields a list of documents per page.
+        :param page:
+        :param per_page:
+        :return:
+        """
         docs = self.get_docs(page=page, per_page=per_page)
         iterations = ceil(docs['count'] / per_page)
 
