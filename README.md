@@ -83,7 +83,7 @@ There are following three APIs -
 
 ```javascript
 {
-    "text": "Sachin Tendulkar is a great cricketer.",
+    "text": "Sachin Tendulkar is the great cricketer.",
 }
 ```
 
